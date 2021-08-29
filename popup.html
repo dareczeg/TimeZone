@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeZone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!--NAVBAR-->
+    <ul>
+        <li class="tab-label" data-tab-index="0" tabindex="0">Profiles</li>
+        <li class="tab-label" data-tab-index="1" tabindex="1">Limits</li>
+        <li class="tab-label" data-tab-index="2" tabindex="2">Settings</li>
+    </ul>
+
+    <div id="allTabsContainer">
+            <!--CONTAINER FOR THE PROFILES TAB-->
+        <div class="tab-container" data-tab-index="0">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Profile</th>
+                        <th>Session</th>
+                        <th>Daily</th>
+                        <th>Weekly</th>
+                        <th>Monthly</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody id="profileList"></tbody>
+                <tr class="table-footer"> 
+                    <td>SORT (BY MO. TOTAL)</td>
+                    <td><button id="sortAscending">ASCENDING</button></td>
+                    <td ><button id="sortDescending">DESCENDING</button></td>
+                    <td></td>
+                    <td><span id="totalTime">00:00:00</span></td>
+                    <td><strong>TOTAL</strong></td>
+                </tr>
+                <tr class="table-footer"> 
+                    <td></td>
+                    <td></td>
+                    <td ></td>
+                    <td></td>
+                    <td>HH : MM : SS</td>
+                    <td><strong>FORMAT</strong></td>
+                </tr>
+            </table>
+                
+        </div>
+
+         <!--CONTAINER FOR THE WEBSITES TAB-->
+        <div class="tab-container" data-tab-index="1" style="display:none;">
+            <table id="limits">
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Notification </th>
+                        <th>Limit</th>
+                    </tr>
+                </thead>
+                <tbody id="pages"></tbody>
+            </table>
+        </div>
+
+            <!--CONTAINER FOR THE SETTINGS TAB-->
+        <div class="tab-container" data-tab-index="2" style="display:none;">
+            <div class="header">ADD PROFILE </div> 
+            <section class="hidden">
+                <form id="addProfile" data-list="list" autocomplete="off">
+                    <label for="profile">Add a new profile to the list</label>
+                    <input type="text" placeholder="eg. University or entertainment" 
+                           size="25" name="profile" id="pName">
+                    <input type="submit" value="+">
+                </form>
+            </section>
+
+            <div class="header">ADD RESTRICTION </div> 
+            <section class="hidden">
+                <form id="addRestriction" data-list="list" autocomplete="off">
+                    <label for="rUrl">Enter the address of the website to restrict</label>
+                    <input type="text" placeholder="http://www.example.com" 
+                           size="25" name="url" id="rUrl">
+                    <label for="rNotification">Specify the number of minutes before to get notification</label>
+                    <input type="text" placeholder="eg. 5 or 15" 
+                           size="25" name="notification" id="rNotification">
+                    <label for="url">Set the limit in minutes</label>
+                    <input type="text" placeholder="eg. 60 or 180" 
+                            size="25" name="limit" id="rLimit">
+                    <input type="submit" value="+">
+                </form>
+            </section>
+
+            <div class="header"> INFORMATION ON DATA PRIVACY</div>
+            <section class="hidden">
+            All the data gathered are stored locally (using 
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">LocalStorage</a>
+            ) and not sent anywhere. 
+            </section>
+        </div>
+    </div>
+
+    <script src="lib/jquery-3.5.1.min.js"></script>
+    <script src="js/Time.js"></script>
+    <script src="js/Storage.js"></script>
+    <script src="js/Navigation.js"></script>
+    <script src="js/Profile.js"></script>
+    <script src="js/Monitor.js"></script>
+
+</body>
+</html>

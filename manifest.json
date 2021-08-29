@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "TimeZone | Personal time advisor",
+  "version": "1.0.1",
+  "author": "Dariusz Ghaemi ©2021",
+  "description": "Control your time spend online and be in charge of your own time!",
+  "incognito": "not_allowed",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["Background.js"],
+    "persistent": false
+  },
+  "permissions": ["*://*/*", "tabs"],
+  "icons": {
+    "128": "icons/icon128.png",
+    "48": "icons/icon48.png",
+    "32": "icons/icon32.png",
+    "16": "icons/icon16.png"
+  }
+}
